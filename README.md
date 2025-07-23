@@ -25,6 +25,8 @@ To check your Python version:
 python3 --version
 ```
 
+##### Make sure you have an SSH key for the device you will use associated with your GitHub account!
+
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
