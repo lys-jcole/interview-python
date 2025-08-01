@@ -30,4 +30,5 @@ INSERT INTO Departments (department_id, department_name, location) VALUES  (1, '
 - [ ] Display departments that do not have any employees
 - [ ] Display the average salary for each department in descending order
 - [ ] Display the average salary for each department in descending order, only if the average is above $50k
+- [ ] Display employees who earn more than the average salary of their department.
 - [ ] Display the highest paid employee for every department
