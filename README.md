@@ -1,6 +1,6 @@
 # 🐍 Python Coding Interview Questions
 
-Welcome to the **Python Coding Interview** repository!  
+Welcome to the **Python Coding Interview** repository!
 
 ## 📁 Project Structure
 
@@ -64,11 +64,14 @@ All tests must pass for your implementation to be considered correct.
 
 ## 📦 Requirements
 
-All dependencies are listed in `requirements.txt`. It typically includes:
+All dependencies are listed in `requirements.txt`. It includes:
 
 ```
 pytest
+pandas
 ```
+
+The pandas library is required for the ETL problem which tests real-world data transformation skills.
 
 ## ✅ Tips
 

@@ -72,8 +72,73 @@ def group_anagrams(words):
     # Your code here
     return None
 
+
+def etl_sales_data(sales_data, product_data, region_data):
+    """
+    ETL Challenge: Transform and analyze sales data using pandas.
+
+    This function simulates a typical ETL pipeline for a sales analytics system.
+    You need to extract data from multiple sources, transform it, clean it,
+    join datasets, and produce an aggregated report.
+
+    Args:
+        sales_data: List of dictionaries containing sales transactions
+            Format: [{"sale_id": int, "product_id": int, "region_id": int,
+                     "quantity": int, "sale_date": str (YYYY-MM-DD), "amount": float}]
+
+        product_data: List of dictionaries containing product information
+            Format: [{"product_id": int, "product_name": str, "category": str, "unit_price": float}]
+
+        region_data: List of dictionaries containing region information
+            Format: [{"region_id": int, "region_name": str, "country": str}]
+
+    Returns:
+        A pandas DataFrame with the following specifications:
+        - Columns: ["category", "country", "total_sales", "total_quantity", "avg_sale_amount"]
+        - Grouped by: category and country
+        - total_sales: Sum of all sale amounts for that category/country
+        - total_quantity: Sum of all quantities sold for that category/country
+        - avg_sale_amount: Average sale amount per transaction (rounded to 2 decimal places)
+        - Sorted by: total_sales in descending order
+        - Index: Reset (no multi-index)
+        - Handle any missing/null values appropriately (drop rows with missing critical data)
+
+    ETL Steps to implement:
+    1. EXTRACT: Convert input lists to pandas DataFrames
+    2. TRANSFORM:
+       - Join sales with products on product_id
+       - Join result with regions on region_id
+       - Handle any missing values
+    3. LOAD/AGGREGATE:
+       - Group by category and country
+       - Calculate required aggregations
+       - Sort and format the output
+
+    Example:
+        sales = [
+            {"sale_id": 1, "product_id": 101, "region_id": 1, "quantity": 5, "sale_date": "2024-01-15", "amount": 150.0},
+            {"sale_id": 2, "product_id": 102, "region_id": 1, "quantity": 3, "sale_date": "2024-01-16", "amount": 90.0},
+            {"sale_id": 3, "product_id": 101, "region_id": 2, "quantity": 2, "sale_date": "2024-01-17", "amount": 60.0}
+        ]
+        products = [
+            {"product_id": 101, "product_name": "Widget A", "category": "Electronics", "unit_price": 30.0},
+            {"product_id": 102, "product_name": "Widget B", "category": "Home", "unit_price": 30.0}
+        ]
+        regions = [
+            {"region_id": 1, "region_name": "North", "country": "USA"},
+            {"region_id": 2, "region_name": "South", "country": "USA"}
+        ]
+
+        Result DataFrame:
+           category  country  total_sales  total_quantity  avg_sale_amount
+        0  Electronics  USA       210.0           7             105.00
+        1  Home         USA        90.0           3              90.00
+    """
+    # Your code here
+    return None
+
 def main():
     None
-    
+
 if __name__ == '__main__':
     main()
