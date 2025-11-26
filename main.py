@@ -1,4 +1,5 @@
 import pandas as pd
+from typing import Any
 
 
 def reverse_string(s: str) -> str | None:
@@ -76,7 +77,7 @@ def group_anagrams(words: list[str]) -> list[list[str]] | None:
     return None
 
 
-def etl_sales_data(sales_data: list[dict[str, any]], product_data: list[dict[str, any]], region_data: list[dict[str, any]]) -> pd.DataFrame | None:
+def etl_sales_data(sales_data: list[dict[str, Any]], product_data: list[dict[str, Any]], region_data: list[dict[str, Any]]) -> pd.DataFrame | None:
     """
     ETL Challenge: Transform and analyze sales data using pandas.
 
@@ -141,7 +142,7 @@ def etl_sales_data(sales_data: list[dict[str, any]], product_data: list[dict[str
     return None
 
 
-def etl_network_performance(site_metrics: list[dict[str, any]], site_info: list[dict[str, any]]) -> pd.DataFrame | None:
+def etl_network_performance(site_metrics: list[dict[str, Any]], site_info: list[dict[str, Any]]) -> pd.DataFrame | None:
     """
     ETL Challenge: Analyze telecom network performance data.
 
