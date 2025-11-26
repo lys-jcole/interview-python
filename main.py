@@ -1,4 +1,7 @@
-def reverse_string(s):
+import pandas as pd
+
+
+def reverse_string(s: str) -> str | None:
     """
     Reverses the input string s.
 
@@ -9,7 +12,7 @@ def reverse_string(s):
     return None
 
 
-def is_palindrome(s):
+def is_palindrome(s: str) -> bool | None:
     """
     Returns True if the input string s is a palindrome (ignores case), False otherwise.
 
@@ -21,7 +24,7 @@ def is_palindrome(s):
     return None
 
 
-def find_max(nums):
+def find_max(nums: list[int]) -> int | None:
     """
     Returns the maximum number in the list nums.
     Returns None if the list is empty.
@@ -33,7 +36,7 @@ def find_max(nums):
     return None
 
 
-def group_words_by_length(words):
+def group_words_by_length(words: list[str]) -> dict[int, list[str]] | None:
     """
     Groups words in a list by their length.
 
@@ -47,7 +50,7 @@ def group_words_by_length(words):
     return None
 
 
-def two_sum(nums, target):
+def two_sum(nums: list[int], target: int) -> list[int] | None:
     """
     Given a list of integers and a target number,
     return the indices of the two numbers that add up to the target.
@@ -61,7 +64,7 @@ def two_sum(nums, target):
     return None
 
 
-def group_anagrams(words):
+def group_anagrams(words: list[str]) -> list[list[str]] | None:
     """
     Groups a list of words into anagram groups.
 
@@ -73,7 +76,7 @@ def group_anagrams(words):
     return None
 
 
-def etl_sales_data(sales_data, product_data, region_data):
+def etl_sales_data(sales_data: list[dict[str, any]], product_data: list[dict[str, any]], region_data: list[dict[str, any]]) -> pd.DataFrame | None:
     """
     ETL Challenge: Transform and analyze sales data using pandas.
 
@@ -137,7 +140,7 @@ def etl_sales_data(sales_data, product_data, region_data):
     # Your code here
     return None
 
-def main():
+def main() -> None:
     None
 
 if __name__ == '__main__':

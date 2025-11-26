@@ -2,27 +2,27 @@ from main import reverse_string, is_palindrome, find_max, group_words_by_length,
 import pandas as pd
 
 
-def test_reverse_string():
+def test_reverse_string() -> None:
     assert reverse_string("hello") == "olleh"
     assert reverse_string("a") == "a"
     assert reverse_string("") == ""
 
 
-def test_is_palindrome():
+def test_is_palindrome() -> None:
     assert is_palindrome("Madam") is True
     assert is_palindrome("test") is False
     assert is_palindrome("Racecar") is True
     assert is_palindrome("Python") is False
 
 
-def test_find_max():
+def test_find_max() -> None:
     assert find_max([3, 1, 5]) == 5
     assert find_max([1, 3, 7, 2]) == 7
     assert find_max([-5, -2, -10]) == -2
     assert find_max([]) is None
 
 
-def test_group_words_by_length():
+def test_group_words_by_length() -> None:
     assert group_words_by_length(["a", "to", "hi", "sun"]) == {
         1: ["a"],
         2: ["to", "hi"],
@@ -35,13 +35,13 @@ def test_group_words_by_length():
     }
 
 
-def test_two_sum():
+def test_two_sum() -> None:
     assert two_sum([2, 7, 11, 15], 9) == [0, 1]
     assert two_sum([3, 2, 4], 6) == [1, 2]
     assert two_sum([1, 5, 3, 2], 8) == [1, 2]
 
 
-def test_group_anagrams_1():
+def test_group_anagrams_1() -> None:
     input_words = ["bat", "tab", "cat", "tac", "act"]
     result = group_anagrams(input_words)
 
@@ -56,7 +56,7 @@ def test_group_anagrams_1():
     assert result_sets == expected
 
 
-def test_group_anagrams_2():
+def test_group_anagrams_2() -> None:
     input_words = ["bat", "tab", "cat", "tac", "act", "dog"]
     result = group_anagrams(input_words)
 
@@ -73,7 +73,7 @@ def test_group_anagrams_2():
     assert result_sets == expected
 
 
-def test_etl_sales_data_basic():
+def test_etl_sales_data_basic() -> None:
     """Test basic ETL functionality with simple dataset"""
     sales = [
         {"sale_id": 1, "product_id": 101, "region_id": 1, "quantity": 5, "sale_date": "2024-01-15", "amount": 150.0},
@@ -118,7 +118,7 @@ def test_etl_sales_data_basic():
     assert result.iloc[1]["avg_sale_amount"] == 90.0
 
 
-def test_etl_sales_data_multiple_countries():
+def test_etl_sales_data_multiple_countries() -> None:
     """Test ETL with multiple countries and categories"""
     sales = [
         {"sale_id": 1, "product_id": 101, "region_id": 1, "quantity": 10, "sale_date": "2024-01-15", "amount": 500.0},
@@ -161,7 +161,7 @@ def test_etl_sales_data_multiple_countries():
     assert electronics_mexico.iloc[0]["total_quantity"] == 15
 
 
-def test_etl_sales_data_with_missing_values():
+def test_etl_sales_data_with_missing_values() -> None:
     """Test ETL handles missing product or region references"""
     sales = [
         {"sale_id": 1, "product_id": 101, "region_id": 1, "quantity": 5, "sale_date": "2024-01-15", "amount": 150.0},
@@ -186,7 +186,7 @@ def test_etl_sales_data_with_missing_values():
     assert result.iloc[0]["total_quantity"] == 5
 
 
-def test_etl_sales_data_rounding():
+def test_etl_sales_data_rounding() -> None:
     """Test that avg_sale_amount is properly rounded to 2 decimal places"""
     sales = [
         {"sale_id": 1, "product_id": 101, "region_id": 1, "quantity": 1, "sale_date": "2024-01-15", "amount": 100.0},
