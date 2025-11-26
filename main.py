@@ -140,6 +140,80 @@ def etl_sales_data(sales_data: list[dict[str, any]], product_data: list[dict[str
     # Your code here
     return None
 
+
+def etl_network_performance(site_metrics: list[dict[str, any]], site_info: list[dict[str, any]]) -> pd.DataFrame | None:
+    """
+    ETL Challenge: Analyze telecom network performance data.
+
+    This function processes time-series performance metrics from cell sites,
+    performing data pivoting, time-based calculations, and quality categorization.
+    Tests different ETL skills than etl_sales_data: pivoting wide-to-long format,
+    datetime operations, conditional transformations, and handling metrics data.
+
+    Args:
+        site_metrics: List of dictionaries containing performance metrics over time
+            Format: [{"site_id": str, "timestamp": str (YYYY-MM-DD HH:MM:SS),
+                     "latency_ms": float, "packet_loss_pct": float,
+                     "throughput_mbps": float, "active_connections": int}]
+
+        site_info: List of dictionaries containing site metadata
+            Format: [{"site_id": str, "site_type": str ("Macro", "Micro", "Pico", or "DAS"),
+                     "region": str, "installation_date": str (YYYY-MM-DD)}]
+
+    Returns:
+        A pandas DataFrame with the following specifications:
+        - Columns: ["site_id", "site_type", "region", "avg_latency_ms",
+                   "avg_packet_loss_pct", "avg_throughput_mbps", "total_connections",
+                   "measurement_count", "performance_grade"]
+        - Grouped by: site_id (with site metadata joined)
+        - avg_latency_ms: Average latency across all measurements (rounded to 2 decimals)
+        - avg_packet_loss_pct: Average packet loss percentage (rounded to 2 decimals)
+        - avg_throughput_mbps: Average throughput in Mbps (rounded to 2 decimals)
+        - total_connections: Sum of all active connections
+        - measurement_count: Count of measurements per site
+        - performance_grade: Categorical grade based on avg_latency_ms:
+            * "Excellent" if avg_latency < 20ms
+            * "Good" if 20 <= avg_latency < 50ms
+            * "Fair" if 50 <= avg_latency < 100ms
+            * "Poor" if avg_latency >= 100ms
+        - Sorted by: avg_latency_ms ascending (best performance first)
+        - Handle missing site_info gracefully (exclude metrics for unknown sites)
+
+    ETL Steps to implement:
+    1. EXTRACT: Load both datasets as DataFrames
+    2. TRANSFORM:
+       - Join metrics with site info on site_id
+       - Parse timestamp strings to datetime objects (if needed for validation)
+       - Calculate aggregations per site
+       - Create performance_grade using conditional logic
+    3. LOAD:
+       - Format numeric columns with proper rounding
+       - Sort by performance (latency)
+       - Reset index
+
+    Example:
+        site_metrics = [
+            {"site_id": "SITE-001", "timestamp": "2024-01-15 10:00:00",
+             "latency_ms": 15.5, "packet_loss_pct": 0.1, "throughput_mbps": 95.2, "active_connections": 120},
+            {"site_id": "SITE-001", "timestamp": "2024-01-15 11:00:00",
+             "latency_ms": 18.2, "packet_loss_pct": 0.2, "throughput_mbps": 92.8, "active_connections": 135},
+            {"site_id": "SITE-002", "timestamp": "2024-01-15 10:00:00",
+             "latency_ms": 45.0, "packet_loss_pct": 1.5, "throughput_mbps": 78.5, "active_connections": 89}
+        ]
+
+        site_info = [
+            {"site_id": "SITE-001", "site_type": "Macro", "region": "North", "installation_date": "2023-05-10"},
+            {"site_id": "SITE-002", "site_type": "Micro", "region": "South", "installation_date": "2022-11-20"}
+        ]
+
+        Result DataFrame:
+          site_id site_type region  avg_latency_ms  avg_packet_loss_pct  avg_throughput_mbps  total_connections  measurement_count performance_grade
+        0 SITE-001     Macro  North           16.85                 0.15                94.00                255                  2         Excellent
+        1 SITE-002     Micro  South           45.00                 1.50                78.50                 89                  1              Good
+    """
+    # Your code here
+    return None
+
 def main() -> None:
     None
 
