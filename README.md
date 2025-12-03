@@ -78,7 +78,18 @@ The pandas library is required for the ETL problem which tests real-world data t
 - Read the problem carefully before implementing.
 - Write clean, readable, and efficient code.
 - Run tests frequently to catch errors early.
-- Don’t be afraid to refactor!
+- Don't be afraid to refactor!
+- **Python documentation is available at:**
+  - **Official Python Documentation:** https://docs.python.org/3/
+  - **W3Schools Python Tutorial:** https://www.w3schools.com/python/
+  - **PyDocs Reference:** https://www.pydocs.site/en/
+
+## ⚠️ Important Rules
+
+- **Screen sharing is required:** You must share your entire screen during the interview.
+- **AI coding assistants (GitHub Copilot, ChatGPT, etc.) are strictly forbidden during this interview.**
+- **Any suspicion of using AI tools or cheating will result in immediate termination of the interview.**
+- You may use the Python documentation and search for syntax references online.
 
 ---
 
